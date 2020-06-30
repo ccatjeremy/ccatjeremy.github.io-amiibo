@@ -1,0 +1,754 @@
+@font-face {
+    font-family:Lato-Regular;
+    src: url(/src/font/Lato-Regular.ttf);
+  }
+@font-face {
+    font-family:Lato-Bold;
+    src: url(/src/font/Lato-Bold.ttf);
+}
+@mixin pc1366{
+    @media(max-width:1366px){
+      @content;
+    }
+}@mixin pad{
+    @media(max-width:1024px){
+      @content;
+    }
+}
+@mixin mobile{
+    @media(max-width:650px)and(orientation: portrait){
+      @content;
+    }
+}
+@mixin mobileLand{
+    @media(max-width:800px)and(orientation: landscape){
+      @content;
+    }
+}
+@mixin smallMobile{
+    @media(max-width:420px)and(orientation: portrait){
+      @content;
+    }
+}
+@mixin h600{
+    @media(max-height:600px){
+      @content;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Lato-Regular';
+    font-size:18px;
+    // @include pc1366{
+    //     font-size:13px;
+    //   }
+    // @include pad{
+    // font-size:14px;
+    // }
+    // @include mobile{
+    // font-size:10px;
+    // }
+    // @include mobileLand{
+    // font-size:7px;
+    // }
+    // @include smallMobile{
+    // font-size:9px;
+    // }
+}
+
+
+.nav{
+    display: grid;
+    grid-template-columns: 350px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 85px;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: #969696 solid 1px;
+    grid-template-areas:
+        "logo console games amiibo news support myNintendo";
+    @include pc1366{
+        grid-template-columns: 200px 1fr 1fr 1fr 1fr 1fr 1fr;
+        height: 60px;
+        font-size: 16px;
+    }
+    @include h600{
+        height: 60px;
+        font-size: 16px;
+    }
+    @include mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #E60013;
+    }
+    .navBar{
+        color:#969696;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: inherit;
+        span{
+            font-family: 'Lato-Bold';
+            margin-left: 20px;
+            font-size: inherit;
+        }
+        svg{
+            height: 35px;
+            fill:#969696;
+            @include h600{
+                height: 20px;
+                font-size: 16px;
+            }
+            @include pc1366{
+                height: 20px;
+                font-size: 16px;
+            }
+            @include pad{
+                display: none;
+            }
+        }
+    }
+    >.logo{
+        grid-area: logo;
+        background-color: #E60013;
+        @include mobile{
+            width:100%;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        .burger{
+            width: 50px;
+            height: 50px;
+            background-color: #FFF;
+            display: none;
+            .mobileList{
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                background-color: #d3d3d3;
+                width: 100vw;
+                top:61px;
+                li{
+                    border-bottom:#969696 solid 1px;
+                    color:black;
+                    font-size: 18px;
+                    line-height: 4em;
+                    text-align: center;
+                }
+            }
+            @include mobile{
+                display: block;
+            }
+        }
+        .fakeBurger{
+            width: 50px;
+            display: none;
+            @include mobile{
+                display: block;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .logoNintendo{
+            fill:#FFF;
+            display: flex;
+            @include h600{
+                height: 35px;
+            }
+            @include pc1366{
+                height: 35px;
+            }
+            @include mobile{
+            }
+        }
+    }
+    .console{
+        grid-area: console;
+        @include mobile{
+            display: none;
+        }
+    }
+    .games{
+        grid-area: games;
+        @include mobile{
+            display: none;
+        }
+    }
+    .amiibo{
+        grid-area: amiibo;
+        color:#E60013;
+        @include mobile{
+            display: none;
+        }
+        svg{
+            height:35px;
+            fill:#E60013;
+            @include h600{
+                height: 20px;
+                font-size: 16px;
+            }
+            @include pc1366{
+                height: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+    .news{
+        grid-area: news;
+        @include mobile{
+            display: none;
+        }
+        svg{
+            height:25px;
+            width: 45px;
+            @include h600{
+                height: 18px;
+                font-size: 16px;
+            }
+            @include pc1366{
+                height: 18px;
+                font-size: 16px;
+            }
+        }
+    }
+    .support{
+        grid-area: support;
+        @include mobile{
+            display: none;
+        }
+    }
+    .myNintendo{
+        grid-area: myNintendo;
+        @include mobile{
+            display: none;
+        }
+        svg{
+            height:30px;
+            width: 58px;
+            @include h600{
+                height: 20px;
+                font-size: 16px;
+                width: 28px;
+            }
+            @include pc1366{
+                height: 20px;
+                font-size: 16px;
+                width: 28px;
+            }
+        }
+    }
+}
+.amiiboNav{
+    width: 100%;
+    border-bottom: #969696 solid 1px;
+    .amiiboLogo{
+        width: 240px;
+        height: 70px;
+        margin:45px auto 45px auto;
+        background: url(/src/image/logo-amiibo-glow.png) no-repeat;
+        background-size:  100% auto;
+        @include h600{
+            margin:20px auto 20px auto;
+        }
+    }
+    .amiiboLink{
+        margin:45px auto 45px auto;
+        width: 600px;
+        height: 35px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        @include h600{
+            margin:20px auto 30px auto;
+        }
+        cursor: pointer;
+        .subNav{
+            width: 175px;
+            height: 100%;
+            border-radius: 45px;
+            border: solid #969696 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#969696;
+            font-family: 'Lato-bold';
+        }
+        .what{
+            color:#E60013;
+            border: solid #E60013 3px;
+        }
+    }
+}
+.amiInfo{
+    width: 1130px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-template-rows: 180px 400px 70px 115px 300px 120px 315px ;
+    @include pc1366{
+        width: 100%;
+    }
+    .getItem{
+        grid-area: 1/1/3/13;
+        background-image:url(/src/image/Nintendo_Switch_Portable.png);
+        background-size:     contain;
+        background-repeat:   no-repeat;
+        background-position: center center;        
+    }
+    .amiInfoText{
+        span{
+        font-family: 'Lato-Bold';
+        font-size: 48px;
+        color:white;
+        text-shadow: 2px 2px 4px #000000;
+        }
+    }
+    .getItemText{
+        grid-area: 2/3/3/7;
+    }
+    .amiibo1{
+        grid-area: 2/9/4/12;
+        background-image: url(/src/image/a_link.png);
+        background-size:     contain;
+        background-repeat:   no-repeat;
+        background-position: center center; 
+    }
+
+    .addCharacter{
+        grid-area: 4/1/7/13;
+        position: relative;
+        .addc{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size:     contain;
+            background-repeat:   no-repeat;
+            background-position: center center;
+        }
+        .ac1{
+            background-image: url(/src/image/spla1-13.png);
+            opacity:0;
+        }
+        .ac2{
+            background-image: url(/src/image/spla2-13.png);
+            opacity:0;
+        }
+    }
+    .amiibo2{
+        grid-area: 5/1/7/5;
+        background: url(/src/image/S2_amiibo_Pearl.png);        
+        background-size:     contain;
+        background-repeat:   no-repeat;
+        background-position: center center;
+        z-index: 5; 
+    }
+    .addCharaText{
+        grid-area: 5/7/6/12;
+        align-self: center;
+        text-align: right;
+        z-index: 5;
+    }
+    .levelUP{
+        grid-area: 6/1/8/13;
+        position: relative;
+        .lu{            
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-size:     contain;
+            background-repeat:   no-repeat;
+            background-position: center center;
+            opacity: 0;
+        }
+        .lu1{
+            background-image: url(/src/image/mari1.png);
+        }
+        .lu2{
+            background-image: url(/src/image/mari2.png);
+        }
+        .lu3{
+            background-image: url(/src/image/mari3.png);
+        }
+    }
+    .levelupText{
+        grid-area: 7/2/8/10;
+        align-self: center;
+        z-index: 5;
+    }
+}
+.marioAnimate{
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    background:url(/src/image/amiibo-mainvisual-bg.jpg);
+    margin-top: 70px;
+    border-top: solid #d3d3d3 2px;
+}
+.amiiboBoxArea{
+    width: 100%;
+    height: 600px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 80px 1fr 1fr 80px;
+    grid-template-rows: 1fr;
+    z-index:10;
+    background-image: url(/src/image/amiibo-mainvisual-bg.jpg);
+    
+    .listLeftArrow{
+        align-self: center;
+        grid-area: 1/1/2/2;
+        justify-self: end;
+        cursor: pointer;
+        .leftArrowSvg{
+            width: 35px;
+        }
+    }
+    .listRightArrow{
+        align-self: center;
+        grid-area: 1/4/2/5;
+        justify-self: start;
+        cursor: pointer;
+        .rightArrowSvg{
+            width: 35px;
+        }
+    }
+    .amiiboIntro{
+        align-self: center;
+        grid-area: 1/2/2/3;
+        justify-self: end;
+        .box{
+            height: 500px;
+            width: 1px;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+            // transform: translateX(-50px);
+            @include pc1366{
+                height: 425px;
+            }
+            .boxBack{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                border-radius: 15px;
+                position: absolute;
+                border:1px solid transparent;
+                z-index: 1;
+                .moveBox{
+                    height: 100%;
+                    position: absolute;
+                    font-size: 0;
+                    white-space:nowrap;
+                    text-overflow:ellipsis;
+                    left : 0;
+                    .boxImage{
+                        height: 100%;
+                    }
+                }
+            }
+            .boxPlastic{
+                position: absolute;
+                height: 100%;
+                z-index: 12;
+            }
+            .mario{
+                width: 51%;
+                left: 50%;
+                z-index: 11;
+                position: absolute;
+                img{
+                    width: 100%;
+                }
+            }
+            .characterBox{
+                position: absolute;
+                width:100%;
+                height:100%;
+                overflow: hidden;
+                .character{
+                    position: absolute;
+                    width:100%;
+                    height:46%;
+                    background-size:     contain;
+                    background-repeat:   no-repeat;
+                    background-position: center center; 
+                    bottom: -100%;
+                    z-index: 2;
+                }
+                .amiC0{
+                    background-image:url(/src/image/lineUP/zzzz.png);
+                }
+                .amiC1{
+                    background-image:url(/src/image/lineUP/zzzy.png);
+                }
+                .amiC2{
+                    background-image:url(/src/image/lineUP/aaac.png);
+                }
+            }
+
+        }
+    }
+    .amiiboText{
+        grid-area: 1/3/2/4;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        color:#FFF;
+        .marioTextInside{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height:65%;
+            width: 55%;
+            @include pc1366{
+                width: 80%;
+            }
+            h1{
+                font-family: Lato-bold;
+                font-size: 2.5em;
+                margin-bottom: .25em;
+                span{
+                    font-size: 2.5em;
+                    margin-bottom: .25em;
+                }
+            }
+            li{
+                list-style: none;
+                font-size: 0.9em;
+                line-height: 1.5em;
+                &::before{
+                    content: '';
+                    display: inline-block;
+                    width: 7px;
+                    height: 7px;
+                    background-color: white;
+                    margin: 3.5px 7.5px 3.5px 3.5px;
+                }
+                span{
+                    font-size: 0.9em;
+                    line-height: 1.5em;
+                } 
+            }
+            p{
+                margin-top: .5em;
+                font-size: 0.9em;
+                line-height: 1.3em;
+            }
+            .amiiboBoxBut{
+                display: flex;
+                flex-direction: row;
+                div{
+                    border-radius: 10px;
+                    border: 1.5px #FFF solid;
+                    font-size: 16px;
+                    font-family: Lato-bold;
+                    text-align: center;
+                    padding:0 1em ;
+                    line-height: 2em;
+                    width: 80px;
+                    margin-top: 1.5em;
+                    margin-right: 1.5em;
+                    cursor: pointer;
+                    transition: background-color .5s, color .5s;
+                    &:hover{
+                        background-color: #FFF;
+                        color:#E60013;
+                    }
+                }
+            }
+        }
+    }
+}
+.compat{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    opacity: 0;
+    border-bottom: #d3d3d3 solid 2px;
+    .compatBackGround{
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        svg{
+            width: 28%;
+            path{
+                fill:#E60013;
+            }
+        }
+    }
+    .compatContent{
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        display: grid;
+        grid-template-columns: 80px 1fr 80px;
+        grid-template-rows: 1.2fr 2.5fr;
+        .compatRightArrow{
+            grid-area: 1/3/3/4;
+            justify-self: start;
+            align-self: center;
+            cursor: pointer;
+            svg{
+                width: 35px;
+            }
+        }
+        .compatLeftArrow{
+            grid-area: 1/1/3/2;
+            justify-self: end;
+            align-self: center;
+            cursor: pointer;
+            svg{
+                width: 35px;
+            }
+        }
+        .compatTitle{
+            grid-area: 1/2/2/3;
+            justify-self: center;
+            align-self: center;
+            p{
+                border-radius: 100px;
+                border: #FFF solid 3px;
+                font-family: Lato-bold;
+                line-height: 2em;
+                color: #FFF;
+                font-size: 20px;
+                padding:0 2em;
+            }
+        }
+        .compatGames{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            grid-area: 2/2/3/3;
+            .compatGamesInside{
+                width: 70%;
+                height: 100%;
+                overflow: hidden;
+                display: flex;
+                align-self: center;
+                position: relative;
+                .compatGamesMove{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    position: absolute;
+                    left: 0;
+                    img{
+                        height:180px;
+                        margin-right: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+.find{
+    height:380px;
+    width: 100%;
+    background-image: url(/src/image/amiibo-mainvisual-bg.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    border-bottom: #d3d3d3 2px solid;
+    .amiiboLine{
+        width: 100%;
+        height:70%;
+        overflow: hidden;
+        position: relative;
+        .amiiboLineMove{
+            position: absolute;
+            height:100%;
+            display: flex;
+            flex-direction: row;
+            img{
+                max-height:220px;
+                height:100%;
+            }
+        }
+    }
+    .findText{
+        height:40px;
+        font-size: 22px;
+        font-family: Lato-bold;
+        background-color: #E60013;
+        border-radius: 100px;
+        color: #FFF;
+        line-height: 2em;
+        padding: 0 2em;
+        align-self: center;
+    }
+}
+.buyToday{
+    width: 100%;
+    height:450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-family: Lato-bold;
+        font-size: 65px;
+        color:#969696;
+    }
+    h3{
+        font-size: 22px;
+        color:#969696;
+        width: 50%;
+        min-width: 360px;
+        font-weight: normal;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+    div img{
+        cursor:pointer;
+    }
+}
+footer{
+    width: 100%;
+    height:150px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .iconHref{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .facebook{
+            width: 35px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .twitter{
+            width: 35px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .youtube{
+            width: 35px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .instgram{
+            width: 35px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    }
+    .footerText{
+        margin-top: 1em;
+        font-size: 12px;
+    }
+}

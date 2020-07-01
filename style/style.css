@@ -939,6 +939,14 @@
           flex-direction: row;
 }
 
+@media (max-width: 650px) and (orientation: portrait) {
+  .amiiboBoxArea .amiiboText .marioTextInside .amiiboBoxBut {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .amiiboBoxArea .amiiboText .marioTextInside .amiiboBoxBut div {
   border-radius: 10px;
   border: 1.5px #FFF solid;
@@ -983,6 +991,12 @@
 
 .compat .compatBackGround svg {
   width: 28%;
+}
+
+@media (max-width: 1366px) {
+  .compat .compatBackGround svg {
+    width: 40%;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1151,6 +1165,7 @@
 
 @media (max-width: 650px) and (orientation: portrait) {
   .compat .compatContent .compatGames .compatGamesInside .compatGamesMove img {
+    height: 80%;
     margin-right: 3%;
   }
 }
@@ -1268,6 +1283,189 @@
 
 .buyToday div img {
   cursor: pointer;
+}
+
+.news {
+  width: 100%;
+}
+
+.news h1 {
+  color: #969696;
+  font-family: Lato-bold;
+  font-size: 58px;
+  text-align: center;
+  margin: 70px 0 40px 0;
+}
+
+.news .newsContent {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.news .newsContent .newsFrame {
+  width: 80%;
+  height: 130px;
+  position: relative;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .news .newsContent .newsFrame {
+    height: 160px;
+  }
+}
+
+@media (max-width: 650px) and (orientation: portrait) {
+  .news .newsContent .newsFrame {
+    height: 250px;
+  }
+}
+
+.news .newsContent .newsFrame:hover > .newsFrameBackground {
+  height: 62%;
+}
+
+.news .newsContent .newsFrame:hover > .newsFrameContent > p {
+  color: #FFF;
+}
+
+.news .newsContent .newsFrame .newsFrameBackground {
+  position: absolute;
+  width: 100%;
+  height: 2%;
+  bottom: 0;
+  background-color: #E60013;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.news .newsContent .newsFrame .newsFrameContent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 650px) and (orientation: portrait) {
+  .news .newsContent .newsFrame .newsFrameContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.news .newsContent .newsFrame .newsFrameContent div {
+  height: 100%;
+  width: 25%;
+  min-width: 315px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+@media (max-width: 650px) and (orientation: portrait) {
+  .news .newsContent .newsFrame .newsFrameContent div {
+    height: 65%;
+    width: 100%;
+  }
+}
+
+.news .newsContent .newsFrame .newsFrameContent p {
+  width: 65%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 15px;
+  color: #969696;
+}
+
+@media (max-width: 650px) and (orientation: portrait) {
+  .news .newsContent .newsFrame .newsFrameContent p {
+    height: 25%;
+    width: 100%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: table;
+    vertical-align: bottom;
+    margin-bottom: 0;
+  }
+}
+
+.news .newsContent .newsFrame .newsFrameContent:hover + .newsFrameBackground {
+  height: 75%;
+}
+
+.news .newsContent .newsFrame .newsFrameContent .ANI1 {
+  background-image: url(../src/image/news/news1-02.png);
+}
+
+.news .newsContent .newsFrame .newsFrameContent .ANI2 {
+  background-image: url(../src/image/news/news2-02.png);
+}
+
+.howItWork {
+  width: 100%;
+}
+
+.howItWork h1 {
+  color: #969696;
+  font-family: Lato-bold;
+  font-size: 58px;
+  text-align: center;
+  margin: 70px 0 40px 0;
+}
+
+.howItWork p {
+  font-size: 22px;
+  color: #969696;
+  width: 50%;
+  margin: 0 auto;
+  min-width: 360px;
+  font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.howItWork div {
+  width: 50%;
+  height: 400px;
+  background-image: url(../src/image/amiibo-section.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .howItWork div {
+    width: 80%;
+  }
+}
+
+@media (max-width: 650px) and (orientation: portrait) {
+  .howItWork div {
+    width: 100%;
+  }
 }
 
 footer {

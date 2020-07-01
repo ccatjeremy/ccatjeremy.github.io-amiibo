@@ -147,7 +147,7 @@
                     border-bottom:#969696 solid 1px;
                     color:black;
                     font-size: 18px;
-                    line-height: 4em;
+                    line-height: 1em;
                     text-align: center;
                 }
             }
@@ -293,6 +293,12 @@
             align-items: center;
             color:#969696;
             font-family: 'Lato-bold';
+            transition: color .5s,background-color .5s;
+            &:hover{
+                border: solid #E60013 3px;
+                background-color: #E60013;
+                color: #FFF;
+            }
             @include mobile{
                 height:38px;
                 width: 75%;
@@ -636,6 +642,9 @@
         justify-content: center;
         svg{
             width: 28%;
+            @include pad{
+                width: 50%;
+            }
             @include mobile{
                 width: 80%;
             }
@@ -699,6 +708,9 @@
                 display: flex;
                 align-self: center;
                 position: relative;
+                @include pad{
+                    width: 80%;
+                }
                 @include mobile{
                     width: 90%;
                 }
@@ -711,6 +723,12 @@
                     img{
                         height:180px;
                         margin-right: 10%;
+                        @include pc1366{
+                            margin-right: 6%;
+                        }
+                        @include pad{
+                            margin-right: 4%;
+                        }
                         @include mobile{
                             margin-right: 3%;
                         }
@@ -755,6 +773,7 @@
         line-height: 2em;
         padding: 0 2em;
         align-self: center;
+        cursor: pointer;
     }
 }
 .buyToday{
@@ -781,9 +800,7 @@
         font-weight: normal;
         margin-top: 1em;
         margin-bottom: 2em;
-        @include mobile{
-            text-align: center;
-        }
+        text-align: center;
     }
     div{
         width: 80%;

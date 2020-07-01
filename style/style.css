@@ -168,7 +168,7 @@
   border-bottom: #969696 solid 1px;
   color: black;
   font-size: 18px;
-  line-height: 4em;
+  line-height: 1em;
   text-align: center;
 }
 
@@ -414,6 +414,14 @@
           align-items: center;
   color: #969696;
   font-family: 'Lato-bold';
+  -webkit-transition: color .5s,background-color .5s;
+  transition: color .5s,background-color .5s;
+}
+
+.amiiboNav .amiiboLink .subNav:hover {
+  border: solid #E60013 3px;
+  background-color: #E60013;
+  color: #FFF;
 }
 
 @media (max-width: 650px) and (orientation: portrait) {
@@ -977,6 +985,12 @@
   width: 28%;
 }
 
+@media (max-width: 1024px) {
+  .compat .compatBackGround svg {
+    width: 50%;
+  }
+}
+
 @media (max-width: 650px) and (orientation: portrait) {
   .compat .compatBackGround svg {
     width: 80%;
@@ -1093,6 +1107,12 @@
   position: relative;
 }
 
+@media (max-width: 1024px) {
+  .compat .compatContent .compatGames .compatGamesInside {
+    width: 80%;
+  }
+}
+
 @media (max-width: 650px) and (orientation: portrait) {
   .compat .compatContent .compatGames .compatGamesInside {
     width: 90%;
@@ -1115,6 +1135,18 @@
 .compat .compatContent .compatGames .compatGamesInside .compatGamesMove img {
   height: 180px;
   margin-right: 10%;
+}
+
+@media (max-width: 1366px) {
+  .compat .compatContent .compatGames .compatGamesInside .compatGamesMove img {
+    margin-right: 6%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .compat .compatContent .compatGames .compatGamesInside .compatGamesMove img {
+    margin-right: 4%;
+  }
 }
 
 @media (max-width: 650px) and (orientation: portrait) {
@@ -1177,6 +1209,7 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  cursor: pointer;
 }
 
 .buyToday {
@@ -1218,12 +1251,7 @@
   font-weight: normal;
   margin-top: 1em;
   margin-bottom: 2em;
-}
-
-@media (max-width: 650px) and (orientation: portrait) {
-  .buyToday h3 {
-    text-align: center;
-  }
+  text-align: center;
 }
 
 .buyToday div {

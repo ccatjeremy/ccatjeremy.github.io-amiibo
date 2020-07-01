@@ -1,11 +1,11 @@
 @font-face {
   font-family: Lato-Regular;
-  src: url(/src/font/Lato-Regular.ttf);
+  src: url(../src/font/Lato-Regular.ttf);
 }
 
 @font-face {
   font-family: Lato-Bold;
-  src: url(/src/font/Lato-Bold.ttf);
+  src: url(../src/font/Lato-Bold.ttf);
 }
 
 * {
@@ -338,7 +338,7 @@
   width: 240px;
   height: 70px;
   margin: 45px auto 45px auto;
-  background: url(/src/image/logo-amiibo-glow.png) no-repeat;
+  background: url(../src/image/logo-amiibo-glow.png) no-repeat;
   background-size: 100% auto;
 }
 
@@ -418,7 +418,7 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: 1/1/3/13;
-  background-image: url(/src/image/Nintendo_Switch_Portable.png);
+  background-image: url(../src/image/Nintendo_Switch_Portable.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -445,7 +445,7 @@
   -ms-grid-column: 9;
   -ms-grid-column-span: 3;
   grid-area: 2/9/4/12;
-  background-image: url(/src/image/a_link.png);
+  background-image: url(../src/image/a_link.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -470,12 +470,12 @@
 }
 
 .amiInfo .addCharacter .ac1 {
-  background-image: url(/src/image/spla1-13.png);
+  background-image: url(../src/image/spla1-13.png);
   opacity: 0;
 }
 
 .amiInfo .addCharacter .ac2 {
-  background-image: url(/src/image/spla2-13.png);
+  background-image: url(../src/image/spla2-13.png);
   opacity: 0;
 }
 
@@ -485,7 +485,7 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: 5/1/7/5;
-  background: url(/src/image/S2_amiibo_Pearl.png);
+  background: url(../src/image/S2_amiibo_Pearl.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -525,15 +525,15 @@
 }
 
 .amiInfo .levelUP .lu1 {
-  background-image: url(/src/image/mari1.png);
+  background-image: url(../src/image/mari1.png);
 }
 
 .amiInfo .levelUP .lu2 {
-  background-image: url(/src/image/mari2.png);
+  background-image: url(../src/image/mari2.png);
 }
 
 .amiInfo .levelUP .lu3 {
-  background-image: url(/src/image/mari3.png);
+  background-image: url(../src/image/mari3.png);
 }
 
 .amiInfo .levelupText {
@@ -552,7 +552,7 @@
   width: 100%;
   height: 40vh;
   position: relative;
-  background: url(/src/image/amiibo-mainvisual-bg.jpg);
+  background: url(../src/image/amiibo-mainvisual-bg.jpg);
   margin-top: 70px;
   border-top: solid #d3d3d3 2px;
 }
@@ -568,7 +568,7 @@
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   z-index: 10;
-  background-image: url(/src/image/amiibo-mainvisual-bg.jpg);
+  background-image: url(../src/image/amiibo-mainvisual-bg.jpg);
 }
 
 .amiiboBoxArea .listLeftArrow {
@@ -694,15 +694,15 @@
 }
 
 .amiiboBoxArea .amiiboIntro .box .characterBox .amiC0 {
-  background-image: url(/src/image/lineUP/zzzz.png);
+  background-image: url(../src/image/lineUP/zzzz.png);
 }
 
 .amiiboBoxArea .amiiboIntro .box .characterBox .amiC1 {
-  background-image: url(/src/image/lineUP/zzzy.png);
+  background-image: url(../src/image/lineUP/zzzy.png);
 }
 
 .amiiboBoxArea .amiiboIntro .box .characterBox .amiC2 {
-  background-image: url(/src/image/lineUP/aaac.png);
+  background-image: url(../src/image/lineUP/aaac.png);
 }
 
 .amiiboBoxArea .amiiboText {
@@ -960,7 +960,7 @@
 .find {
   height: 380px;
   width: 100%;
-  background-image: url(/src/image/amiibo-mainvisual-bg.jpg);
+  background-image: url(../src/image/amiibo-mainvisual-bg.jpg);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

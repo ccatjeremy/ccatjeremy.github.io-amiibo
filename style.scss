@@ -447,6 +447,12 @@
         grid-template-columns: 50px 1fr 50px;
         grid-template-rows: 1fr 1fr;
     }
+    @include smallMobile{
+        height: 1000px;
+        width:100vw ;
+        grid-template-columns: 20px auto 20px;
+        grid-template-rows: 1fr 1fr;
+    }
     .listLeftArrow{
         align-self: center;
         grid-area: 1/1/2/2;
@@ -457,6 +463,10 @@
         }
         .leftArrowSvg{
             width: 35px;
+            @include smallMobile{
+                width: 20px;
+                height:200px;
+            }
         }
     }
     .listRightArrow{
@@ -469,6 +479,10 @@
         }
         .rightArrowSvg{
             width: 35px;
+            @include smallMobile{
+                width: 20px;
+                height:200px;
+            }
         }
     }
     .amiiboIntro{
@@ -487,6 +501,9 @@
             box-shadow: rgba(0,0,0,0.8) 0 0 10px;
             @include pc1366{
                 height: 425px;
+            }
+            @include mobile{
+                height:300px;
             }
             .boxBack{
                 width: 100%;
@@ -558,6 +575,9 @@
         color:#FFF;
         @include mobile{
             grid-area: 2/2/3/3;
+        }
+        @include smallMobile{
+            grid-area: 2/1/3/4;
         }
         .marioTextInside{
             display: flex;
@@ -654,6 +674,9 @@
             @include mobile{
                 width: 80%;
             }
+            @include smallMobile{
+                width: 100%;
+            }
             path{
                 fill:#E60013;
             }
@@ -669,6 +692,9 @@
         @include mobile{
             grid-template-columns: 50px 1fr 50px;
         }
+        @include smallMobile{
+            grid-template-columns: 25px 1fr 25px;
+        }
         .compatRightArrow{
             grid-area: 1/3/3/4;
             justify-self: start;
@@ -676,6 +702,9 @@
             cursor: pointer;
             svg{
                 width: 35px;
+                @include mobile{
+                    display: none;
+                }
             }
         }
         .compatLeftArrow{
@@ -685,6 +714,9 @@
             cursor: pointer;
             svg{
                 width: 35px;
+                @include mobile{
+                    display: none;
+                }
             }
         }
         .compatTitle{
@@ -719,6 +751,7 @@
                 }
                 @include mobile{
                     width: 90%;
+                    overflow: scroll;
                 }
                 .compatGamesMove{
                     height: 100%;
@@ -781,6 +814,9 @@
         padding: 0 2em;
         align-self: center;
         cursor: pointer;
+        @include smallMobile{
+            font-size: 20px;
+        }
     }
 }
 .buyToday{
@@ -790,6 +826,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include mobile{
+        height: auto;
+    }
     h1{
         font-family: Lato-bold;
         font-size: 65px;
@@ -803,7 +842,7 @@
         font-size: 22px;
         color:#969696;
         width: 50%;
-        min-width: 360px;
+        min-width: 300px;
         font-weight: normal;
         margin-top: 1em;
         margin-bottom: 2em;
@@ -887,9 +926,10 @@
                         width: 100%;
                         padding: 5px;
                         box-sizing: border-box;
-                        display:table;
-                        vertical-align:bottom;
                         margin-bottom: 0;
+                    }
+                    @include smallMobile{
+                        height: 45%;
                     }
                 }
                 &:hover + .newsFrameBackground{ height:75%; }
@@ -917,7 +957,7 @@
         color:#969696;
         width: 50%;
         margin: 0 auto;
-        min-width: 360px;
+        min-width: 300px;
         font-weight: normal;
         margin-top: 1em;
         margin-bottom: 2em;
